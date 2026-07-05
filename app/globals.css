@@ -1,0 +1,475 @@
+/* ============================================================
+   TAROTECA - Sistema de diseño
+   Tema único: oscuro (biblioteca digital, tarot elegante).
+   Base: Bootstrap 5.3 en data-bs-theme="dark" + tokens propios.
+   ============================================================ */
+
+:root,
+[data-bs-theme="dark"] {
+  /* Tokens Taroteca */
+  --tarot-bg: #0e0d11;
+  --tarot-surface: #15141a;
+  --tarot-surface-2: #1c1b23;
+  --tarot-line: rgba(233, 229, 222, 0.1);
+  --tarot-line-strong: rgba(233, 229, 222, 0.18);
+  --tarot-text: #e9e5dc;
+  --tarot-muted: #a59f93;
+  --tarot-gold: #c9a968;
+  --tarot-gold-bright: #ddc08a;
+  --tarot-gold-soft: rgba(201, 169, 104, 0.13);
+
+  /* Radio único del proyecto: contenedores 12px, interactivos píldora */
+  --tarot-radius: 12px;
+
+  /* Puente hacia Bootstrap */
+  --bs-body-bg: var(--tarot-bg);
+  --bs-body-color: var(--tarot-text);
+  --bs-secondary-color: var(--tarot-muted);
+  --bs-border-color: var(--tarot-line);
+  --bs-link-color: var(--tarot-gold);
+  --bs-link-hover-color: var(--tarot-gold-bright);
+  --bs-body-font-family: var(--font-body), system-ui, sans-serif;
+  --bs-border-radius: var(--tarot-radius);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1100px 520px at 50% -180px, rgba(201, 169, 104, 0.07), transparent 70%),
+    var(--tarot-bg);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--tarot-gold);
+  color: #14120c;
+}
+
+/* ---------- Tipografía ---------- */
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--tarot-text);
+}
+
+h1.font-display { line-height: 1.08; }
+
+.text-gold { color: var(--tarot-gold); }
+.text-muted-2 { color: var(--tarot-muted); }
+
+.lead-narrow {
+  color: var(--tarot-muted);
+  max-width: 56ch;
+  line-height: 1.7;
+}
+
+/* ---------- Navegación ---------- */
+
+.site-nav {
+  background: rgba(14, 13, 17, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--tarot-line);
+  min-height: 68px;
+}
+
+.site-brand {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--tarot-text);
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.site-brand .brand-mark { color: var(--tarot-gold); }
+.site-brand:hover { color: var(--tarot-text); }
+
+.nav-link-t {
+  color: var(--tarot-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link-t:hover { color: var(--tarot-text); }
+
+.nav-link-t.active {
+  color: var(--tarot-gold-bright);
+  background: var(--tarot-gold-soft);
+}
+
+.admin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--tarot-gold-bright);
+  background: var(--tarot-gold-soft);
+  border: 1px solid rgba(201, 169, 104, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+}
+
+/* ---------- Botones ---------- */
+
+.btn-gold {
+  --bs-btn-bg: var(--tarot-gold);
+  --bs-btn-color: #17130a;
+  --bs-btn-border-color: var(--tarot-gold);
+  --bs-btn-hover-bg: var(--tarot-gold-bright);
+  --bs-btn-hover-color: #17130a;
+  --bs-btn-hover-border-color: var(--tarot-gold-bright);
+  --bs-btn-active-bg: var(--tarot-gold-bright);
+  --bs-btn-active-color: #17130a;
+  --bs-btn-active-border-color: var(--tarot-gold-bright);
+  border-radius: 999px;
+  font-weight: 500;
+  padding-inline: 1.4rem;
+}
+
+.btn-ghost {
+  --bs-btn-color: var(--tarot-text);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--tarot-line-strong);
+  --bs-btn-hover-bg: var(--tarot-surface-2);
+  --bs-btn-hover-color: var(--tarot-text);
+  --bs-btn-hover-border-color: var(--tarot-line-strong);
+  --bs-btn-active-bg: var(--tarot-surface-2);
+  --bs-btn-active-color: var(--tarot-text);
+  border-radius: 999px;
+  padding-inline: 1.4rem;
+}
+
+.btn-gold:active,
+.btn-ghost:active {
+  transform: translateY(1px);
+}
+
+.btn-delete {
+  --bs-btn-color: #d28b8b;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: rgba(210, 139, 139, 0.4);
+  --bs-btn-hover-bg: rgba(210, 139, 139, 0.12);
+  --bs-btn-hover-color: #e3a6a6;
+  --bs-btn-hover-border-color: rgba(210, 139, 139, 0.6);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.75rem;
+}
+
+/* ---------- Formularios ---------- */
+
+.form-control,
+.form-control:focus {
+  background: var(--tarot-surface);
+  border-color: var(--tarot-line-strong);
+  color: var(--tarot-text);
+  border-radius: var(--tarot-radius);
+}
+
+.form-control::placeholder { color: rgba(165, 159, 147, 0.75); }
+
+.form-control:focus {
+  border-color: var(--tarot-gold);
+  box-shadow: 0 0 0 0.2rem rgba(201, 169, 104, 0.18);
+}
+
+.form-label {
+  color: var(--tarot-text);
+  font-size: 0.9rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tarot-gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Filtros de la biblioteca ---------- */
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--tarot-line-strong);
+  color: var(--tarot-muted);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-pill:hover {
+  color: var(--tarot-text);
+  background: var(--tarot-surface-2);
+}
+
+.filter-pill.active {
+  color: var(--tarot-gold-bright);
+  background: var(--tarot-gold-soft);
+  border-color: rgba(201, 169, 104, 0.45);
+}
+
+/* ---------- Galería de cartas ---------- */
+
+.tarot-tile {
+  display: block;
+  text-decoration: none;
+  color: var(--tarot-text);
+  border-radius: var(--tarot-radius);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tarot-tile:hover { transform: translateY(-4px); color: var(--tarot-text); }
+
+.tarot-tile .tile-name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+.tarot-tile .tile-number {
+  font-size: 0.75rem;
+  color: var(--tarot-muted);
+  letter-spacing: 0.08em;
+}
+
+.card-frame {
+  position: relative;
+  aspect-ratio: 7 / 12;
+  border-radius: var(--tarot-radius);
+  overflow: hidden;
+  border: 1px solid var(--tarot-line);
+  background: var(--tarot-surface);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarot-tile:hover .card-frame,
+.card-frame.is-large:hover {
+  border-color: rgba(201, 169, 104, 0.55);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder elegante para cartas sin imagen */
+.card-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(201, 169, 104, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--tarot-surface-2), var(--tarot-surface));
+}
+
+.card-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(201, 169, 104, 0.3);
+  border-radius: calc(var(--tarot-radius) - 5px);
+  pointer-events: none;
+}
+
+.card-placeholder .ph-roman {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  color: var(--tarot-gold);
+  line-height: 1;
+}
+
+.card-placeholder .ph-name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--tarot-text);
+}
+
+.card-placeholder .ph-ornament { color: rgba(201, 169, 104, 0.6); }
+
+/* ---------- Superficies y secciones ---------- */
+
+.panel {
+  background: var(--tarot-surface);
+  border: 1px solid var(--tarot-line);
+  border-radius: var(--tarot-radius);
+}
+
+.section-pad { padding-block: 4.5rem; }
+
+@media (min-width: 992px) {
+  .section-pad { padding-block: 6rem; }
+}
+
+.divider-line {
+  border: 0;
+  border-top: 1px solid var(--tarot-line);
+  opacity: 1;
+  margin: 0;
+}
+
+.keyword-pill {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--tarot-gold-bright);
+  background: var(--tarot-gold-soft);
+  border: 1px solid rgba(201, 169, 104, 0.28);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+}
+
+/* ---------- Comentarios ---------- */
+
+.comment-item {
+  border-bottom: 1px solid var(--tarot-line);
+  padding: 1.1rem 0;
+}
+
+.comment-item:last-child { border-bottom: 0; }
+
+.comment-author {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--tarot-text);
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: var(--tarot-muted);
+}
+
+.comment-body {
+  color: var(--tarot-muted);
+  margin-bottom: 0;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+/* ---------- Modal de administración ---------- */
+
+.t-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050; /* por encima del sticky-top de Bootstrap (1020) */
+  background: rgba(8, 7, 10, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.t-modal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--tarot-surface);
+  border: 1px solid var(--tarot-line-strong);
+  border-radius: var(--tarot-radius);
+  padding: 1.75rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero-fan {
+  position: relative;
+  height: 360px;
+}
+
+.hero-fan .fan-card {
+  position: absolute;
+  width: 175px;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-fan .fan-left { transform: translate(-50%, -50%) rotate(-12deg) translateX(-72px); }
+.hero-fan .fan-center { transform: translate(-50%, -52%); z-index: 2; }
+.hero-fan .fan-right { transform: translate(-50%, -50%) rotate(12deg) translateX(72px); }
+
+.hero-fan:hover .fan-left { transform: translate(-50%, -50%) rotate(-16deg) translateX(-86px); }
+.hero-fan:hover .fan-right { transform: translate(-50%, -50%) rotate(16deg) translateX(86px); }
+.hero-fan:hover .fan-center { transform: translate(-50%, -56%); }
+
+/* ---------- Tiradas ---------- */
+
+.spread-article {
+  border-top: 1px solid var(--tarot-line);
+  padding-top: 3rem;
+  margin-top: 3rem;
+}
+
+.spread-article:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.spread-question {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--tarot-gold-bright);
+  border-left: 2px solid var(--tarot-gold);
+  padding-left: 1rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--tarot-line);
+  color: var(--tarot-muted);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--tarot-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover { color: var(--tarot-text); }
+
+/* ---------- Animación de entrada (sutil) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
