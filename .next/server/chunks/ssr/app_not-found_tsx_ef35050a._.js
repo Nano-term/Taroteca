@@ -1,0 +1,3 @@
+module.exports=[66188,a=>{"use strict";a.s(["default",()=>d]);var b=a.i(7997),c=a.i(97647);function d(){return(0,b.jsxs)("div",{className:"container section-pad text-center",children:[(0,b.jsx)("p",{className:"font-display display-5 mb-2",children:"Esta carta no está en el mazo"}),(0,b.jsx)("p",{className:"text-muted-2 mb-4",children:"La página que buscas no existe o ha cambiado de lugar."}),(0,b.jsx)(c.default,{href:"/",className:"btn btn-gold",children:"Volver a la biblioteca"})]})}}];
+
+//# sourceMappingURL=app_not-found_tsx_ef35050a._.js.map
