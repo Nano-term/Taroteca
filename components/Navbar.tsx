@@ -75,7 +75,7 @@ export function Navbar() {
               </span>
             )}
             {isAdmin && (
-              <Link href="/admin/secciones" className="nav-link-t">
+              <Link href="/admin" className="nav-link-t">
                 Panel
               </Link>
             )}
@@ -115,7 +115,7 @@ export function Navbar() {
             ))}
             {isAdmin && (
               <Link
-                href="/admin/secciones"
+                href="/admin"
                 className="nav-link-t"
                 onClick={() => setOpen(false)}
               >

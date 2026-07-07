@@ -435,6 +435,13 @@ h1.font-display { line-height: 1.08; }
   padding-left: 1rem;
 }
 
+.spread-context-preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
@@ -473,3 +480,51 @@ h1.font-display { line-height: 1.08; }
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ---------- Layouts de tiradas ---------- */
+
+.spread-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+  width: 140px;
+}
+
+.spread-card-frame {
+  width: 140px;
+}
+
+/* Una carta */
+.spread-layout-single {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tres cartas: una fila, en orden */
+.spread-layout-three {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* La cruz: norte arriba, oeste-centro-este en medio, sur abajo */
+.spread-layout-cross {
+  display: grid;
+  grid-template-areas:
+    ".    north .   "
+    "west center east"
+    ".    south .   ";
+  grid-template-columns: 140px 140px 140px;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.cross-north { grid-area: north; }
+.cross-west { grid-area: west; }
+.cross-center { grid-area: center; }
+.cross-east { grid-area: east; }
+.cross-south { grid-area: south; }
